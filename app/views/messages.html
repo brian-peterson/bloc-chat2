@@ -1,0 +1,11 @@
+<div class="container-fluid messages" ng-controller="MainCtrl">
+ <div class="row" ng-repeat="message in getMessagesForRoom()">
+   <div class="col col-lg-6">
+     <div class="name">{{message.name}}</div>
+     <div class="message">{{message.message}}</div>
+   </div>
+   <div class="col col-lg-6 text-right">
+     <div class="time">{{message.time}}</div>
+   </div>
+ </div> 
+</div>
