@@ -14,35 +14,17 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ui.router',
+    'ngRoute',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/rooms');
-    var rooms = {
-      name: 'rooms',  //mandatory
-      url: '/rooms',
-      template: '<div ui-view></div>'
-    };
-
-    var room = {
-      name: 'rooms.room',
-      url: '/:roomName',
-      templateUrl: 'views/messages.html',
-      parent: rooms
-    };
-    //var sharedViews = {
-    //  'messages': {
-    //    templateUrl: 'views/messages.html'
-    //  },
-    //  'roomList': {
-    //    templateUrl: 'views/roomList.html'
-    //  }
-    //};
-
-    $stateProvider
-    .state(rooms)
-    .state(room);
-
+  .config(function ($routeProvider) {
+    $routeProvider
+    .when('/', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
   });
