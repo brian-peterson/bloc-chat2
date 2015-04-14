@@ -16,7 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -27,4 +28,16 @@ angular
     .otherwise({
       redirectTo: '/'
     });
-  });
+  })
+  .run(['$cookies', '$modal', function($cookies, $modal) {
+
+    if (!$cookies.blocChatCurrentUser || $cookies.blocChatCurrentUser === '' ) {
+      $modal.open({
+        templateUrl: 'myModalContent.html',
+        controller: 'MainCtrl'
+        // Modal configuration object properties
+      });
+    }
+
+  }])
+  ;

@@ -84,6 +84,20 @@
     </div>
     <!-- /#wrapper -->
 
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">New Nickname</h3>
+        </div>
+        <div class="modal-body">
+                <div class="form-group">
+                  <label for="nickName">Nickname</label>
+                  <input type="text" id="nickName" ng-model="newNickName" class="form-control">
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="createNickname(newNickname)">Create Nickname</button>
+        </div>
+    </script>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -108,6 +122,7 @@ ga('send', 'pageview');
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
