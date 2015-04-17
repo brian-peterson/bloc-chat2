@@ -31,6 +31,7 @@ angular
   .run(['$cookies', function($cookies) {
 
     if (!$cookies.blocChatCurrentUser || $cookies.blocChatCurrentUser === '' ) {
+      angular.element('#myModal2').modal({backdrop:'static'});
       angular.element('#myModal2').modal('show');
     }
 
