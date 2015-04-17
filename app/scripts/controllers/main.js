@@ -26,7 +26,7 @@ angular.module('blocChatApp')
       $scope.rooms.push({name: newRoomName, messages: []});
       $scope.newRoomName = '';
     };
-    $scope.createNickname = function (nickname) {
+    $scope.addUser = function (nickname) {
       $cookies.blocChatCurrentUser = nickname;
       $scope.newNickname = '';
     };
